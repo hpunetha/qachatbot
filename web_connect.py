@@ -304,8 +304,7 @@ def samplefunction():
     if request.method == 'POST':
         
         if 'form1' in request.form:
-            
-            
+            global human1            
             human1 = request.form['human']
             # if human1 in greetIn:
             global bot
@@ -318,12 +317,24 @@ def samplefunction():
             if value=='1':
                 rating=True
 
+            valcheck = bot
+
             if bot=="":
                 rating="Please ask question first"
+            else:
+                import pandas
+                # 'question':0,'answer':1,'feedback':2
+                d = {'0':[human1],'1':[valcheck],'2':[rating]}
+                df1 = pandas.DataFrame(d)
+                with open('feedback.csv', 'a') as f:
+                    (df1).to_csv(f, header=False,index=False)
+           
+            bot=""            
 
-            valcheck = bot
-            bot=""
             return render_template('index.html',rating=rating,bot=valcheck)
+
+            
+
             # else:
             #     render_template('index.html')
 
