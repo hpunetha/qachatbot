@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Chatbot</title>
+    <script>
+        var bot = {{ bot }}
+    </script>
+  </head>
+  <body>
+      <h3>Hello, type your question and press enter </h3>
+      <form method='post'>
+        Question: <input type='text' name='human'><br>
+        Answer: {{ bot }}<br>
+        <input type="submit" name="action">
+      </form>
+  </body>
+</html>

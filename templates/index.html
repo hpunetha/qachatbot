@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Chatbot</title>
+    <script>
+        var bot = {{ bot }}
+		var rate = {{ rating }}
+    </script>
+  </head>
+  <body>
+      <h3>Hello, type your question and press enter </h3>
+      <form name="form1" method='post'  >
+        Question: <input type='text' name='human'><br>
+        Answer: {{ bot }}<br>
+        <input type="submit" name="form1" value="Submit!">
+      </form>
+	  <form name="form2" method="post">
+  
+	  <input type="radio" name="tip3" value="1" checked /> Yes
+	  <input type="radio" name="tip3" value="0" /> No
+		feedback: {{ rating }}
+	  <input type="submit" name="form2" value="Rate!">
+	</form>
+  </body>
+</html>
